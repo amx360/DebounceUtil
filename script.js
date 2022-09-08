@@ -10,17 +10,6 @@ function debounce(func, delay = 750) {
   };
 }
 
-var lastValue = '';
-
-function userInputWithPreviousValueWatch() {
-  var currValue = document.getElementById('field').value;
-
-  if (lastValue !== currValue) {
-    lastValue = currValue;
-    document.getElementById('debounced').innerText = currValue;
-    console.log(currValue);
-  }
-}
 
 function userInput() {
   document.getElementById('debounced').innerText =
@@ -28,4 +17,6 @@ function userInput() {
   console.log(document.getElementById('field').value);
 }
 
-const debouncedUserInput = debounce(userInput, 1000);
+const debouncedUserInput = debounce(userInput, 10000);
+
+
